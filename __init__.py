@@ -23,14 +23,12 @@ def return_loader():
 
 def load_rawreads():
     datafile = 'v2.4.6/Achilles_v2.19.1_rawreads.csv'
-    return pd.read_csv(return_loader().find(datafile), 
-        index_col='Unnamed: 0')
+    return pd.read_csv(return_loader().find(datafile))
 
 
 def load_rnai(): 
     datafile = 'v2.4.6/Achilles_v2.4.6.rnai.gct'
-    return pd.read_csv(return_loader().find(datafile), 
-        sep='\t', skiprows=2)
+    return pd.read_csv(return_loader().find(datafile), sep='\t', skiprows=2)
 
 
 # def test_1():
