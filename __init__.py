@@ -1,12 +1,10 @@
 import os
-from dataset_achilles.dataloader import dataloader  
+from dataset_achilles.dataloader import _dataloader  
 import pandas as pd 
 
-_baseurl = 'http://143.248.32.25/~jhsong/dataset/Perturbation/Achilles'
-_loader = dataloader(_baseurl+'/v2.4.6.tar.gz');
-
-def return_loader(): 
-    return _loader
+# Tsherniak, Aviad, Francisca Vazquez, Phil G. Montgomery, Barbara A. Weir, Gregory Kryukov, Glenn S. 
+# Cowley, Stanley Gill, et al. 2017. “Defining a Cancer Dependency Map.” Cell 170 (3): 564–576.e16. 
+# doi:10.1016/j.cell.2017.06.010.
 
 # ?rwxr-xr-x songj/197609          0 2017-08-15 23:27:10 v2.4.6/
 # ?rw-r--r-- songj/197609        828 2017-08-15 13:36:55 v2.4.6/Achilles_Analysis_README_v2.19.2.txt
@@ -21,6 +19,12 @@ def return_loader():
 # ?rw-r--r-- songj/197609   21015002 2017-08-15 13:36:52 v2.4.6/shrna_mapping_20150312.tsv
 # ?rw-r--r-- songj/197609   20800239 2017-08-15 13:38:39 v2.4.6/TableS3_shRNAPerformance.csv
 
+_baseurl = 'http://143.248.32.25/~jhsong/dataset/Perturbation/Achilles'
+
+def return_loader(): 
+    return _dataloader(_baseurl+'/v2.4.6.tar.gz')
+
+
 def load_rawreads():
     datafile = 'v2.4.6/Achilles_v2.19.1_rawreads.csv'
     return pd.read_csv(return_loader().find(datafile))
@@ -29,30 +33,4 @@ def load_rawreads():
 def load_rnai(): 
     datafile = 'v2.4.6/Achilles_v2.4.6.rnai.gct'
     return pd.read_csv(return_loader().find(datafile), sep='\t', skiprows=2)
-
-
-# def test_1():
-#     import dataset_achilles
-#     df0 = dataset_achilles.load_rawreads()
-
-
-def test_2():
-    import dataset_achilles
-    
-    loader = dataset_achilles.return_loader()
-    
-    loader.ls()    
-    
-    datafile = 'v2.4.6/Achilles_v2.4.6.rnai.gct'
-
-    # loader.cat(datafile)
-    
-    loader.head(datafile)
-    
-#     loader.tail('v2.4.6/Achilles_Analysis_README_v2.19.2.txt',3)
-
-    df0 = dataset_achilles.load_rnai()
-
-    xxx
-#     assert True 
 
