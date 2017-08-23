@@ -5,8 +5,6 @@ def test_hello():
 
     loader = dataset_achilles.return_loader()
 
-    xxx
-
     # loader.ls()    
 
     df0 = dataset_achilles.load_rawreads()
