@@ -6,7 +6,7 @@ module_dir = dirname(__file__)
 if not exists(join(module_dir, 'downloader')): 
     os.system('git clone git@github.com:jehoons/downloader.git %s/downloader' % module_dir)
 
-from dataset_achilles.downloader import _downloader
+from downloader import _downloader
 
 
 def return_loader(): 
