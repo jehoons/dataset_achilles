@@ -1,28 +1,42 @@
+import dataset_achilles
+import pytest 
 
-def test_hello():
-    
-    import dataset_achilles
-
+@pytest.mark.skip(reason='noreason')
+def test_loader():
     loader = dataset_achilles.return_loader()
-
-    # loader.ls()    
-
-    df0 = dataset_achilles.load_rawreads()
-    
+    loader.ls()    
     datafile = 'v2.4.6/Achilles_v2.4.6.rnai.gct'
+    loader.cat(datafile)    
+    loader.head(datafile)
+    loader.tail('v2.4.6/Achilles_Analysis_README_v2.19.2.txt',3)
 
-    # loader.cat(datafile)
-    
-    # loader.head(datafile)    
-    
-    # loader.tail('v2.4.6/Achilles_Analysis_README_v2.19.2.txt',3)
+@pytest.mark.skip(reason='noreason')
+def test_1():
+    df = dataset_achilles.load_rawreads()
+    print(df.head(2))
 
-    df0 = dataset_achilles.load_rnai()
+@pytest.mark.skip(reason='noreason')
+def test_2(): 
+    df = dataset_achilles.load_foldchange()
+    print(df.head())
 
-    print(df0.head())
+@pytest.mark.skip(reason='noreason')
+def test_3(): 
+    df = dataset_achilles.load_rawreads()
 
-    df1 = dataset_achilles.load_rawreads()
+@pytest.mark.skip(reason='noreason')
+def test_4(): 
+    df = dataset_achilles.load_demeter_knockdown()
 
-    print(df1.head())
+@pytest.mark.skip(reason='noreason')
+def test_5(): 
+    df = dataset_achilles.load_demeter_seed()
 
+@pytest.mark.skip(reason='noreason')
+def test_6(): 
+    df = dataset_achilles.load_demeter_perf()
+    xxx
 
+# @pytest.mark.skip(reason='noreason')
+def test_7(): 
+    df = dataset_achilles.load_shrna_mapping()
