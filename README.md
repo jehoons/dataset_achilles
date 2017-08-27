@@ -1,6 +1,6 @@
 # dataset_achilles
 
-### installation steps 
+### Install 
 
 ```
 git clone git@github.com:jehoons/dataset_achilles.git
@@ -8,11 +8,9 @@ cd dataset_achilles
 git clone git@github.com:jehoons/dataloader.git
 ```
 
-### RANi published, v2.20.2
+### Data Version: RANi published, v2.20.2
 
 downloaded from [here](https://portals.broadinstitute.org/achilles/datasets/15/download)
-
-# Tsherniak, Aviad, Francisca Vazquez, Phil G. Montgomery, Barbara A. Weir, Gregory Kryukov, Glenn S. Cowley, Stanley Gill, et al. 2017. “Defining a Cancer Dependency Map.” Cell 170 (3): 564–576.e16. doi:10.1016/j.cell.2017.06.010.
 
 Raw readcount file for cell lines using the 98k shRNA library. 
 
@@ -52,3 +50,9 @@ achilles-v2-19-2-mapped-rnai_v1-data.gct
 shRNA to gene mappings file
 
 shrna_mapping_20150312.tsv
+
+### Reference
+
+Tsherniak, Aviad, Francisca Vazquez, Phil G. Montgomery, Barbara A. Weir, Gregory Kryukov, Glenn S. Cowley, Stanley Gill, et al. 2017. “Defining a Cancer Dependency Map.” Cell 170 (3): 564–576.e16. doi:10.1016/j.cell.2017.06.010.
+
+
